@@ -18,19 +18,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-      with:
-        tag_name: ${{ github.pk3011 }}
-        release_name: Release ${{ github.pk3011 }}
-        draft: false
-        prerelease: false
-    - name: Output Release URL File
-      run: echo "${{ steps.create_release.outputs.upload_url }}" > release_url.txt
-    - name: Save Release URL File for publish
-      uses: actions/upload-artifact@v1
-      with:
-        name: release_url
-        path: release_url.txt
+        GITHUB_TOKEN: ${{ secrets.G_TOKEN }
 
   build:
     name: Build packages
